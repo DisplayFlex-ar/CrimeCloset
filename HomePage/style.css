@@ -1,0 +1,145 @@
+body {
+    background: #131313;
+    width: 95%;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+.hero-content {
+    color: aliceblue;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 30px;
+}
+nav img{
+    margin-top: 10px;
+}
+
+nav ul {
+    display: flex;
+    color: aliceblue;
+    list-style: none;
+    font-size: 15px;
+    z-index: 9999999;
+}
+
+.main-nav li:hover ,.nav-menu li:hover {
+    color: #efd8ab;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hero-content ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hero-content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 20px 0 0 50px;
+}
+
+.hero-content h1{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 100px;
+    font-weight: 800 !important;
+    line-height: 120px;
+    position: relative;
+    top: -50px;
+}
+
+.hero-content p{
+    font-size: 15px;
+    font-weight: 700;
+    opacity: 0.4;
+    position: relative;
+    top: -120px;
+    max-width: 400px;
+}
+
+.hero-content button{
+    font-size: 15px;
+    font-weight: 700;
+    width: 200px;
+    padding: 15px 0;
+    position: relative;
+    top: -100px;
+    border-radius: 20px;
+    background: #1e1e1e;
+    border: 2px solid #efd8ab;
+    color: aliceblue;
+}
+
+.hero-content button:hover{
+    border: none;
+    transform: scale(1.1);
+    transition: 1s;
+    background: #efd8ab;
+    color: #1e1e1e;
+}
+
+.nav-menu {
+    position: relative;
+    left: 0px;
+}
+
+.hero-img {
+    position: relative;
+    top: -155px;
+}
+
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.main-nav li {
+    margin-left: 90px;
+}
+.ham{
+    color: aliceblue;
+    display: block;
+    font-size: 40px;
+    margin: 20px;
+    position: relative;
+}
+
+@media screen and (max-width:900px) {
+    .main-nav,.nav-menu{
+        display: none;
+    }
+    body{
+        overflow: visible;
+    }
+}
+@media screen and (min-width:900px) {
+    .ham{
+        display: none;
+    }
+}
+@media screen and (max-width:730px) {
+    .hero-img img{
+       height: 500px;
+    }
+}
+@media screen and (max-width:463px) {
+    .hero-img img{
+        height: 300px;
+        margin-top: 30px;
+     }
+     .hero-content h1{
+        font-size: 90px;
+    }
+}
+ 

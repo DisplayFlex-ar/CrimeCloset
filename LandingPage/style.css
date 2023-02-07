@@ -1,0 +1,72 @@
+body{
+    background: radial-gradient(#2a2a2a ,#000000);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+.back{
+    display: flex;
+    justify-content: center;
+    opacity: 0.3;
+    position: relative;
+    top: -520px;
+    z-index: -99999;
+}
+@media screen and (max-width:500px){
+   .back img{
+    height: 300px;
+   } 
+   .buttons button{
+    margin-bottom: 10px;
+   }
+   .main2{
+    position: relative;
+    top: -150px;
+   }
+}
+.main{
+    z-index: 99999;
+    color: aliceblue;
+}
+.Logo{
+    display: flex;
+    margin: 20px 0 0 0;
+}
+/* .Logo h3{
+    margin-left: 5px;
+    position: relative;
+    top: -10px;
+} */
+.main2{
+    margin-top: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.main2 h1{
+    font-size: 40px;
+}
+.main2 h2{
+    font-size: 15px;
+    font-weight:300 ;
+    position: relative;
+    top: -30px;
+   letter-spacing: 10px;
+}
+.main2 button{
+    font-size: 20px;
+    position: relative;
+    top: -30px;
+    border-radius: 10px;
+    padding: 10px 50px;
+    border: none;
+    background: rgb(230,177,126);
+}
+.main2 p{
+    font-size: 12px;
+    font-weight:300 ;
+    position: relative;
+    top: -30px;
+    letter-spacing: 3px;
+}
