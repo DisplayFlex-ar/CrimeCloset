@@ -9,8 +9,17 @@ body{
 	font-size: 15px;
 	line-height: 1.7;
 	color: #c4c3ca;
-	background-color: #1f2029;
+	background: #131313;
 	overflow-x: hidden;
+}
+.goog{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.goog1{
+  padding-top: 22px;
+  padding-left: 10px;
 }
 a {
 	cursor: pointer;

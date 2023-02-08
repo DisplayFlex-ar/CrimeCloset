@@ -5,12 +5,14 @@
   <title>CodePen - Log In / Sign Up - pure css - #12</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="./style.css">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <a href="/home">
-		<img src="./crime-closet-high-resolution-logo-color-on-transparent-background.png" height="100px" class="logo"></a>
+		<img src="./crime-closet-high-resolution-logo-color-on-transparent-background.png" height="60px" class="logo"></a>
 			
 				<div class="col-12 text-center align-self-center py-5">
 					<div class="section pb-5 pt-5 pt-sm-2 text-center">
@@ -23,7 +25,7 @@
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Log In</h4>
-											<form>
+											<form id="sub">
 											<div class="form-group">
 												<input type="email" class="form-style"
 												placeholder="Your Email" id="logemail" autocomplete="off" required>
@@ -34,7 +36,25 @@
 												required>
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
+											<div class="goog">
 											<button type="submit" class="btn mt-4" id = "submit">Submit</button>
+											<div id="g_id_onload"
+     data-client_id="444589849573-4qpr24rfbts7ql98tacmbgaqkjfg64ig.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="/homepage/index.html"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin goog1"
+     data-type="standard"
+     data-shape="pill"
+     data-theme="filled_black"
+     data-text="signin"
+     data-size="medium"
+     data-logo_alignment="left"
+     data-width="90">
+</div></div>
 											</form>
 				      					</div>
 			      					</div>
@@ -43,7 +63,7 @@
 									<div class="center-wrap">
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Sign Up</h4>
-											<form>
+											<form id="sig">
 											<div class="form-group">
 												<input type="text" class="form-style" placeholder="Your Full Name" id="logname" autocomplete="off" required>
 												<i class="input-icon uil uil-user"></i>
@@ -61,7 +81,25 @@
 												<input type="password" class="form-style" placeholder="Confirm Password" id="confirm-password-signup" autocomplete="off" required>
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
-											<button type="submit" class="btn mt-4" id = "create-acct-btn">Submit</button>
+											<div class="goog">
+											<button type="submit" class="btn mt-4" id = "create-acct-btn">Submit</button>&nbsp;
+											<div id="g_id_onload"
+     data-client_id="444589849573-4qpr24rfbts7ql98tacmbgaqkjfg64ig.apps.googleusercontent.com"
+     data-context="signin"
+     data-ux_mode="popup"
+     data-login_uri="/homepage/index.html"
+     data-auto_prompt="false">
+</div>
+
+<div class="g_id_signin goog1"
+     data-type="standard"
+     data-shape="pill"
+     data-theme="filled_black"
+     data-text="signin"
+     data-size="medium"
+     data-logo_alignment="left"
+     data-width="90">
+</div></div>
 										</form>
 				      					</div>
 			      					</div>
@@ -87,26 +125,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
+const form = document.getElementById('sub')
+form.onsubmit = (e) => {
+  e.preventDefault()
+  email = emailInput.value;
+  password = passwordInput.value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      window.location.href = "/homepage/index.html";
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+	  window.alert(error.message);
+    });
+}
 
-const submitButton = document.getElementById("submit");
-document.getElementById("submit").addEventListener("click", function(event){
-  event.preventDefault()
-});
-document.getElementById("create-acct-btn").addEventListener("click", function(event){
-  event.preventDefault()
-});
-
-const emailInput = document.getElementById("logemail");
-const passwordInput = document.getElementById("logpass");
-const main = document.getElementById("main");
-const signupEmailIn = document.getElementById("email-signup");
-const signupPasswordIn = document.getElementById("password-signup");
-const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
-const createacctbtn = document.getElementById("create-acct-btn");
-
-var email, password, signupEmail, signupPassword,confirmSignUpPassword;
-
-createacctbtn.addEventListener("click", function() {
+const form1 = document.getElementById('sig')
+form1.onsubmit = (e) => {
+  e.preventDefault()
   var isVerified = true;
 
   signupEmail = signupEmailIn.value;
@@ -134,24 +174,18 @@ createacctbtn.addEventListener("click", function() {
       window.alert(error.message);
     });
   }
-});
+}
 
-submitButton.addEventListener("click", function() {
-  email = emailInput.value;
-  password = passwordInput.value;
-  signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      window.location.href = "dashboard.html";
-      // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-	  window.alert(error.message);
-    });
-});
+const emailInput = document.getElementById("logemail");
+const passwordInput = document.getElementById("logpass");
+const main = document.getElementById("main");
+const signupEmailIn = document.getElementById("email-signup");
+const signupPasswordIn = document.getElementById("password-signup");
+const confirmSignUpPasswordIn = document.getElementById("confirm-password-signup");
+const createacctbtn = document.getElementById("create-acct-btn");
+
+var email, password, signupEmail, signupPassword,confirmSignUpPassword;
+
 
 	</script>
 
