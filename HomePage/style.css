@@ -11,7 +11,8 @@ nav {
     width: 100%;
     padding: 0 30px;
 }
-nav img{
+
+nav img {
     margin-top: 10px;
 }
 
@@ -23,18 +24,22 @@ nav ul {
     z-index: 9999999;
 }
 
-.main-nav li:hover ,.nav-menu li:hover {
+.main-nav li:hover,
+.nav-menu li:hover {
     color: #efd8ab;
 }
+
 @media screen and (min-width:900px) {
-    .ham{
+    .ham {
         display: none;
     }
 }
+
 .nav-menu {
     position: relative;
     left: 0px;
 }
+
 .nav-menu li {
     margin-left: 30px;
 }
@@ -42,19 +47,23 @@ nav ul {
 .main-nav li {
     margin-left: 90px;
 }
-.ham{
+
+.ham {
     color: aliceblue;
-    display: block;
+    /* display: block; */
     font-size: 40px;
     margin: 20px;
     position: relative;
 }
 
 @media screen and (max-width:900px) {
-    .main-nav,.nav-menu{
+
+    .main-nav,
+    .nav-menu {
         display: none;
     }
-    body{
+
+    body {
         overflow: visible;
     }
 }
@@ -75,14 +84,14 @@ nav ul {
     justify-content: space-between;
 }
 
-.hero-content{
+.hero-content {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     padding: 20px 0 0 50px;
 }
 
-.hero-content h1{
+.hero-content h1 {
     display: flex;
     flex-wrap: wrap;
     font-size: 100px;
@@ -92,7 +101,7 @@ nav ul {
     top: -50px;
 }
 
-.hero-content p{
+.hero-content p {
     font-size: 15px;
     font-weight: 700;
     opacity: 0.4;
@@ -101,7 +110,7 @@ nav ul {
     max-width: 400px;
 }
 
-.hero-content button{
+.hero-content button {
     font-size: 15px;
     font-weight: 700;
     width: 200px;
@@ -114,7 +123,7 @@ nav ul {
     color: aliceblue;
 }
 
-.hero-content button:hover{
+.hero-content button:hover {
     border: none;
     transform: scale(1.1);
     transition: 1s;
@@ -130,17 +139,18 @@ nav ul {
 
 
 @media screen and (max-width:730px) {
-    .hero-img img{
-       height: 500px;
+    .hero-img img {
+        height: 500px;
     }
 }
+
 @media screen and (max-width:463px) {
-    .hero-img img{
+    .hero-img img {
         height: 300px;
         margin-top: 30px;
-     }
-     .hero-content h1{
+    }
+
+    .hero-content h1 {
         font-size: 90px;
     }
 }
- 
