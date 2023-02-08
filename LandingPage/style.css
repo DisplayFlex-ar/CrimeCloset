@@ -2,13 +2,14 @@ body{
     background: radial-gradient(#2a2a2a ,#000000);
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+  
 }
 .back{
     display: flex;
     justify-content: center;
     opacity: 0.3;
-    position: relative;
-    top: -520px;
+    position: absolute;
+    bottom: -0px;
     z-index: -99999;
 }
 @media screen and (max-width:500px){
@@ -26,6 +27,8 @@ body{
 .main{
     z-index: 99999;
     color: aliceblue;
+    display: flex;
+    justify-content: center;
 }
 .Logo{
     display: flex;

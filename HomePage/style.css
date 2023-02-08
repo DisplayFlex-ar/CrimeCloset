@@ -3,6 +3,7 @@ body {
     width: 95%;
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
+    margin: 0px !important;
 }
 
 nav {
@@ -75,6 +76,8 @@ nav ul {
 
 .hero-content {
     color: aliceblue;
+    margin-top: 10vh;
+    margin-left: 5vw;
 }
 
 .hero-content ul {
@@ -133,8 +136,10 @@ nav ul {
 
 
 .hero-img {
-    position: relative;
-    top: -155px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  margin-left: 40vw;
 }
 
 
