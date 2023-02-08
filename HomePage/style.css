@@ -5,10 +5,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.hero-content {
-    color: aliceblue;
-}
-
 nav {
     display: flex;
     justify-content: space-between;
@@ -30,10 +26,46 @@ nav ul {
 .main-nav li:hover ,.nav-menu li:hover {
     color: #efd8ab;
 }
+@media screen and (min-width:900px) {
+    .ham{
+        display: none;
+    }
+}
+.nav-menu {
+    position: relative;
+    left: 0px;
+}
+.nav-menu li {
+    margin-left: 30px;
+}
+
+.main-nav li {
+    margin-left: 90px;
+}
+.ham{
+    color: aliceblue;
+    display: block;
+    font-size: 40px;
+    margin: 20px;
+    position: relative;
+}
+
+@media screen and (max-width:900px) {
+    .main-nav,.nav-menu{
+        display: none;
+    }
+    body{
+        overflow: visible;
+    }
+}
 
 .hero {
     display: flex;
     flex-wrap: wrap;
+}
+
+.hero-content {
+    color: aliceblue;
 }
 
 .hero-content ul {
@@ -90,44 +122,13 @@ nav ul {
     color: #1e1e1e;
 }
 
-.nav-menu {
-    position: relative;
-    left: 0px;
-}
 
 .hero-img {
     position: relative;
     top: -155px;
 }
 
-.nav-menu li {
-    margin-left: 30px;
-}
 
-.main-nav li {
-    margin-left: 90px;
-}
-.ham{
-    color: aliceblue;
-    display: block;
-    font-size: 40px;
-    margin: 20px;
-    position: relative;
-}
-
-@media screen and (max-width:900px) {
-    .main-nav,.nav-menu{
-        display: none;
-    }
-    body{
-        overflow: visible;
-    }
-}
-@media screen and (min-width:900px) {
-    .ham{
-        display: none;
-    }
-}
 @media screen and (max-width:730px) {
     .hero-img img{
        height: 500px;
