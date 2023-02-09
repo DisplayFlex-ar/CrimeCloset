@@ -159,3 +159,7 @@ nav ul {
         font-size: 90px;
     }
 }
+a{
+    text-decoration:none;
+    color: inherit;
+}
