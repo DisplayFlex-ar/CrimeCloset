@@ -7,8 +7,7 @@ body {
 
 header {
   width: 100%;
-  border-bottom: 1px solid #efd8ab;
-  background: #1e1e1e;
+  background: #131313;
 }
 header a.logo {
   margin-left: 1em;
@@ -24,7 +23,6 @@ header a.cart-link {
   float: right;
   padding-left: 1em;
   margin-right: 1em;
-  border-left: 1px dotted #515151;
   line-height: 4em;
   text-decoration: none;
   color: #fff;
@@ -121,15 +119,23 @@ footer p {
 
 /* Shop & Product Items
  * ============================ */
+ .shop{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background: #131313;
+ }
 .product {
   position: relative;
   z-index: 1;
   float: left;
-  width: 50%;
+  width: 400px;
   height: 300px;
   overflow: hidden;
   background-position: center center;
   background-size: cover;
+  margin: 50px;
+  border-radius: 20px;
   /* Hide product descriptions */
   /* On hover, adds overlay on top of product image */
   /* On hover, fade in product descriptions */
@@ -340,22 +346,18 @@ a.checkout {
   padding: 0;
   margin-top: 30px;
   border-radius: 3px;
-  background: #247ebe;
+  background: #142430;
   font-size: 1em;
   text-align: center;
   text-transform: uppercase;
   line-height: 35px;
   transition: background 150ms ease-out;
   cursor: pointer;
+  color: inherit;
 }
 a.checkout:hover {
-  background: #3c98da;
+  background: #122b3d;
 }
-a.checkout.active {
-  animation-name: shake;
-  animation-duration: 800ms;
-}
-
 
 /* Media Queries
  * ============================ */
@@ -381,16 +383,5 @@ a.checkout.active {
   }
   100% {
     transform: translateZ(-100px);
-  }
-}
-@keyframes shake {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  10%, 30%, 50%, 70%, 90% {
-    transform: translateX(-5px);
-  }
-  20%, 40%, 60%, 80% {
-    transform: translateX(5px);
   }
 }

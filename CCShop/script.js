@@ -2,12 +2,12 @@ $(document).ready(function() {
 
   // Product data to be used in shop and in cart
   var products = {
-    'Detective Zoom Spy Magnifying Glass' : ['Octocat Mug', "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.", 14, '../assets/magnify.jpg', 1],
-    'Leather Coasters' : ['Leather Coasters', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 18, 'https://cdn.shopify.com/s/files/1/0051/4802/products/MG_1934_1024x1024.jpg', 2],  
-    'Octopint (Set of 2)' : ['Octopint (Set of 2)', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 16, 'https://cdn.shopify.com/s/files/1/0051/4802/products/pint_1024x1024.jpg', 3],
-    'Blacktocat 2.0 Tee' : ['Blacktocat 2.0 Tee', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 25, 'https://cdn.shopify.com/s/files/1/0051/4802/products/blacktocat-3_1024x1024.jpg', 4],
-    'Die Cut Stickers' : ['Die Cut Stickers', "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!", 2, 'https://cdn.shopify.com/s/files/1/0051/4802/products/sticker-large_1024x1024.jpg', 5],
-    'Pixelcat Shirt' : ['Pixelcat Shirt', "Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline", 25, 'https://cdn.shopify.com/s/files/1/0051/4802/products/8bit-1_1024x1024.jpg?145', 6]
+    'Detective Zoom Spy Magnifying Glass' : ['Detective Zoom Spy Magnifying Glass', "The magnifying glass", 1400, 'assets/magnify.jpg', 1],
+    'Leather Coasters' : ['Leather Coasters', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 1800, 'assets/voice.jpg', 2],  
+    'HD Focus Spy Magnet Camera' : ['HD Focus Spy Magnet Camera', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 1600, 'assets/magnetcam.jpg', 3],
+    'Blacktocat 2.0 Tee' : ['Blacktocat 2.0 Tee', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 2500, 'assets/bino.jpg', 4],
+    'Die Cut Stickers' : ['Die Cut Stickers', "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!", 2000, 'assets/pencam.jpg', 5],
+    'Pixelcat Shirt' : ['Pixelcat Shirt', "Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline", 2512, 'assets/gloves.jpg', 6]
   };  
   
   // Populates shop with items based on template and data in var products
@@ -25,7 +25,7 @@ $(document).ready(function() {
     
     $template.find('h1').text(itemName);
     $template.find('p').text(itemDescription);
-    $template.find('.price').text('$' + itemPrice);
+    $template.find('.price').text('₹' + itemPrice);
     $template.css('background-image', 'url(' + itemImg + ')');
     
     $template.data('id', itemId);
@@ -74,7 +74,7 @@ $(document).ready(function() {
     } else {
       $template.find('.cart-product').css('background-image', 'url(' + $item.data('image') + ')');
       $template.find('h3').text($item.data('name'));
-      $template.find('.subtotal').text('$' + $item.data('price'));
+      $template.find('.subtotal').text('₹' + $item.data('price'));
     
       $template.data('id', $item.data('id'));
       $template.data('price', $item.data('price'));
@@ -93,7 +93,7 @@ $(document).ready(function() {
     var quantity = $item.find('.quantity').val(),
         price = $item.data('price'),
         subtotal = quantity * price;
-    $item.find('.subtotal').text('$' + subtotal);
+    $item.find('.subtotal').text('₹' + subtotal);
     $item.data('subtotal', subtotal);
   } 
     
@@ -129,11 +129,11 @@ $(document).ready(function() {
           price = $item.data('subtotal');
       subtotal += price;
     });
-    $('.subtotalTotal span').text(formatDollar(subtotal));
+    $('.subtotalTotal span').text(('₹'+subtotal));
     tax = subtotal * .05;
-    $('.taxes span').text(formatDollar(tax));
-    $('.shipping span').text(formatDollar(shipping));
-    $('.finalTotal span').text(formatDollar(subtotal + tax + shipping));
+    $('.taxes span').text(('₹'+tax));
+    $('.shipping span').text(('₹'+shipping));
+    $('.finalTotal span').text(('₹'+(subtotal + tax + shipping)));
   }
 
   //  Update the total quantity of items in notification, hides if zero
@@ -191,6 +191,6 @@ $(document).ready(function() {
       $('.checkout').removeClass('active');    
       $('.error').css('display', 'none');      
     }, 1000);
-  });    
-  
+  });    
+  
 });
