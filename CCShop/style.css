@@ -7,19 +7,18 @@ body {
 
 header {
   width: 100%;
-  border-bottom: 1px solid #7cbae6;
+  border-bottom: 1px solid #efd8ab;
   background: #1e1e1e;
 }
 header a.logo {
   margin-left: 1em;
-  text-transform: uppercase;
   text-decoration: none;
-  color: #7cbae6;
+  color: #efd8ab;
   line-height: 4em;
 }
 header a.logo span {
   margin: 0 3px 0 3px;
-  color: #9cdaf0;
+  color: #f5e7cb;
 }
 header a.cart-link {
   float: right;
@@ -32,10 +31,10 @@ header a.cart-link {
   transition: color 150ms ease-out;
 }
 header a.cart-link:hover {
-  color: #7cbae6;
+  color: #efd8ab;
 }
 header a.cart-link:active, header a.cart-link .active {
-  color: #9cdaf0;
+  color: #f5e7cb;
 }
 header span.cart-text:before {
   margin: 5px;
@@ -65,8 +64,6 @@ header .returnToShop {
 }
 header a.cart-link.active {
   border: 0;
-  /* Cart link gets hidden */
-  /* Back button is displayed */
 }
 header a.cart-link.active span.cart-text {
   display: none;
@@ -167,7 +164,7 @@ footer p {
   border-bottom: 1px dotted gray;
   font-weight: normal;
   font-size: 1.6em;
-  color: #7cbae6;
+  color: #efd8ab;
 }
 .product p {
   margin-bottom: 30px;
@@ -189,7 +186,7 @@ footer p {
   display: block;
   width: 50px;
   height: 46px;
-  border-right: 1px solid #9cdaf0;
+  border-right: 1px solid #f5e7cb;
   border-radius: 2px 0 0 2px;
   background: #fff;
   line-height: 45px;
@@ -216,12 +213,12 @@ footer p {
 }
 .product .button .addtocart > .add {
   background: #fff;
-  color: #7cbae6;
+  color: #efd8ab;
   transform: rotateY(0deg) translateZ(25px);
   transition: background 150ms ease-out;
 }
 .product .button .addtocart > .add:hover {
-  background: #7cbae6;
+  background: #efd8ab;
   color: #fff;
 }
 .product .button .addtocart > .added {
@@ -244,7 +241,7 @@ footer p {
   height: 64px;
   padding-right: 1em;
   border-left: 1px dotted #515151;
-  border-bottom: 1px solid #7cbae6;
+  border-bottom: 1px solid #efd8ab;
   margin: 0;
   background: #2d2d2d;
   font-weight: normal;
@@ -298,7 +295,7 @@ footer p {
 .cart-description h3 {
   margin: 8px;
   font-size: 1em;
-  color: #7cbae6;
+  color: #efd8ab;
 }
 .cart-description .subtotal {
   position: relative;
@@ -335,7 +332,7 @@ footer p {
 
 .finalTotal {
   font-size: 1em;
-  color: #7cbae6;
+  color: #efd8ab;
 }
 
 a.checkout {
