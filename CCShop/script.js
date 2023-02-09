@@ -2,7 +2,7 @@ $(document).ready(function() {
 
   // Product data to be used in shop and in cart
   var products = {
-    'Octocat Mug' : ['Octocat Mug', "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.", 14, 'https://cdn.shopify.com/s/files/1/0051/4802/products/white-mug-1_1024x1024.jpg', 1],
+    'Detective Zoom Spy Magnifying Glass' : ['Octocat Mug', "The mug you've been dreaming about. One sip from this ceramic 16oz fluid delivery system and you'll never go back to red cups.", 14, '../assets/magnify.jpg', 1],
     'Leather Coasters' : ['Leather Coasters', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 18, 'https://cdn.shopify.com/s/files/1/0051/4802/products/MG_1934_1024x1024.jpg', 2],  
     'Octopint (Set of 2)' : ['Octopint (Set of 2)', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 16, 'https://cdn.shopify.com/s/files/1/0051/4802/products/pint_1024x1024.jpg', 3],
     'Blacktocat 2.0 Tee' : ['Blacktocat 2.0 Tee', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 25, 'https://cdn.shopify.com/s/files/1/0051/4802/products/blacktocat-3_1024x1024.jpg', 4],
