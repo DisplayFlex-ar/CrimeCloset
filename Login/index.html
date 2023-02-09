@@ -43,8 +43,8 @@
      data-client_id="444589849573-4qpr24rfbts7ql98tacmbgaqkjfg64ig.apps.googleusercontent.com"
      data-context="signin"
      data-ux_mode="popup"
-     data-login_uri="https://crimecloset.netlify.app/homepage/"
-     data-auto_prompt="false">
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
 </div>
 
 <div class="g_id_signin goog1"
@@ -88,8 +88,8 @@
      data-client_id="444589849573-4qpr24rfbts7ql98tacmbgaqkjfg64ig.apps.googleusercontent.com"
      data-context="signin"
      data-ux_mode="popup"
-     data-login_uri="https://crimecloset.netlify.app/homepage/"
-     data-auto_prompt="false">
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
 </div>
 
 <div class="g_id_signin goog1"
@@ -109,6 +109,12 @@
 			      		</div>
 			      	</div>
 		      	</div>
+            <script>
+              window.handleCredentialResponse = () => {
+                window.location.href = "/homepage/index.html";
+
+}
+            </script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
@@ -127,6 +133,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const form = document.getElementById('sub')
+
 form.onsubmit = (e) => {
   e.preventDefault()
   email = emailInput.value;
