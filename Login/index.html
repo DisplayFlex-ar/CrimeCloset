@@ -2,9 +2,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <t  <title>Log In / Sign Up</title>
+  <title>Log In / Sign Up</title>
   <link rel="icon" type="image/x-icon" href="../assets/Logo.png">
-nk rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
 <link rel='stylesheet' href='https://unicons.iconscout.com/release/v2.1.9/css/unicons.css'><link rel="stylesheet" href="./style.css">
 <script src="https://accounts.google.com/gsi/client" async defer></script>
 <meta name="referrer" content="strict-origin-when-cross-origin" />
@@ -43,8 +43,8 @@ nk rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstr
      data-client_id="444589849573-4qpr24rfbts7ql98tacmbgaqkjfg64ig.apps.googleusercontent.com"
      data-context="signin"
      data-ux_mode="popup"
-     data-callback="auth"
-     data-auto_prompt="false">
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
 </div>
 
 <div class="g_id_signin goog1"
@@ -88,8 +88,8 @@ nk rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstr
      data-client_id="444589849573-4qpr24rfbts7ql98tacmbgaqkjfg64ig.apps.googleusercontent.com"
      data-context="signin"
      data-ux_mode="popup"
-     data-callback="auth"
-     data-auto_prompt="false">
+       data-callback="handleCredentialResponse"
+       data-auto_prompt="false">
 </div>
 
 <div class="g_id_signin goog1"
@@ -109,6 +109,12 @@ nk rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstr
 			      		</div>
 			      	</div>
 		      	</div>
+            <script>
+              window.handleCredentialResponse = () => {
+                window.location.href = "/homepage/index.html";
+
+}
+            </script>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-analytics.js";
@@ -127,9 +133,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const form = document.getElementById('sub')
-function auth(){
-  window.location.href = "/homepage/index.html";
-}
+
 form.onsubmit = (e) => {
   e.preventDefault()
   email = emailInput.value;
