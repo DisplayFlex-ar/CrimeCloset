@@ -182,6 +182,7 @@ margin-left: 0px;
 @media screen and (max-width:740px) {
     .hero-img img{
         bottom: -40px;
+        display: none;
     }
 }
 @media screen and (max-width:550px) {
