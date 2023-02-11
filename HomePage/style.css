@@ -57,12 +57,13 @@ nav ul {
     position: relative;
 }
 
-@media screen and (max-width:900px) {
 
-    .main-nav,
-    .nav-menu {
+@media screen and (max-width:900px) {
+    .ham {
         display: none;
     }
+
+  
 
     body {
         overflow: visible;
@@ -135,28 +136,99 @@ nav ul {
 }
 
 
-.hero-img {
+.hero-img img{
   display: flex;
   position: absolute;
   bottom: 0px;
-  margin-left: 40vw;
+  margin-left: 40px;
 }
 
-
-@media screen and (max-width:730px) {
+@media screen and (max-width:1300px) {
+    .hero-img img {
+        height: 600px;
+margin-right: 100px;
+margin-left: 0px;
+    }
+    
+}
+@media screen and (max-width:1110px) {
     .hero-img img {
         height: 500px;
+        margin-right: 150px;
+        bottom: -8px;
     }
+    
 }
 
-@media screen and (max-width:463px) {
+@media screen and (max-width:990px) {
     .hero-img img {
-        height: 300px;
-        margin-top: 30px;
+        height: 500px;
+        margin-right: 300px;
+        bottom: -8px;
+        z-index: -999;
     }
-
+    .hero-img{
+        display: flex;
+        justify-content: center;
+        align-items:flex-end;
+        /* width: 500px; */
+       } 
+}
+@media screen and (max-width:890px) {
+    .hero-img img{
+        bottom: -20px;
+    }
+}
+@media screen and (max-width:740px) {
+    .hero-img img{
+        bottom: -40px;
+    }
+}
+@media screen and (max-width:550px) {
+    .hero-img img{
+        bottom: -60px;
+    }
     .hero-content h1 {
         font-size: 90px;
+    }
+}
+@media screen and (max-width:530px) {
+    .hero-img img{
+        bottom: -80px;
+    }
+    .hero-img{
+        display: block;
+        /* justify-content: ; */
+        /* align-items:flex-end; */
+        /* width: 500px; */
+       }  
+       .nav{
+        width: 130%;
+       }
+}
+@media screen and (max-width:450px) {
+    .hero-img img{
+        bottom: -120px;
+    }
+}
+@media screen and (max-width:430px) {
+    .hero-img img{
+        bottom: -160px;
+    }
+}
+@media screen and (max-width:410px) {
+    .hero-img img{
+        bottom: -200px;
+    }
+}
+@media screen and (max-width:390px) {
+    .hero-img img{
+        bottom: -240px;
+    }
+}
+@media screen and (max-width:370px) {
+    .hero-img img{
+        bottom: -280px;
     }
 }
 a{

@@ -2,12 +2,12 @@ $(document).ready(function() {
 
   // Product data to be used in shop and in cart
   var products = {
-    'Detective Zoom Spy Magnifying Glass' : ['Detective Zoom Spy Magnifying Glass', "The magnifying glass", 1400, 'assets/magnify.jpg', 1],
-    'Leather Coasters' : ['Leather Coasters', "These coasters roll all of the greatest qualities into one: class, leather, and octocats. They also happen to protect surfaces from cold drinks.", 1800, 'assets/voice.jpg', 2],  
-    'HD Focus Spy Magnet Camera' : ['HD Focus Spy Magnet Camera', "Set of two heavyweight 16 oz. Octopint glasses for your favorite malty beverage.", 1600, 'assets/magnetcam.jpg', 3],
-    'Blacktocat 2.0 Tee' : ['Blacktocat 2.0 Tee', "Check it. Blacktocat is back with a whole new direction. He's exited stealth mode and is ready for primetime, now with a stylish logo.", 2500, 'assets/bino.jpg', 4],
-    'Die Cut Stickers' : ['Die Cut Stickers', "Need a huge Octocat sticker for your laptop, fridge, snowboard, or ceiling fan? Look no further!", 2000, 'assets/pencam.jpg', 5],
-    'Pixelcat Shirt' : ['Pixelcat Shirt', "Pixels are your friends. Show your bits in this super-comfy blue American Apparel tri-blend shirt with a pixelated version of your favorite aquatic feline", 2512, 'assets/gloves.jpg', 6]
+    'Spy Magnifying Glass' : ['Spy Magnifying Glass', "A specially shaped piece of glass used to make an object look larger than it is.", 499, 'assets/magni.png', 1],
+    'Mini Gps' : ['Mini GPS Tracker', "The mini gps tracker will provide exact location of whatever you are tracking right on Google Maps!", 1599, 'assets/gps.png', 2],  
+    'HD Focus Spy Pen' : ['HD Focus Spy Pen', "A spy pen is a functioning ink pen that also has a video camera above the pocket clip. ", 999, 'assets/spy.png', 3],
+    'Binoculars' : ['Binoculars', "Binoculars, optical instrument, usually handheld, for providing a magnified stereoscopic view of distant objects.",9999, 'assets/binocu.png', 4],
+    'Spy Pen' : ['DSLR HD Camera', "DSLRs use a digital sensor to capture images, which are then stored on a memory card.", 31199, 'assets/cam.png', 5],
+    'Leather Gloves' : ['Leather Gloves', "These gloves are made from good quality of leather and protection against cut and puncture resistance.", 699, 'assets/glov.png', 6]
   };  
   
   // Populates shop with items based on template and data in var products
@@ -25,13 +25,17 @@ $(document).ready(function() {
     
     $template.find('h1').text(itemName);
     $template.find('p').text(itemDescription);
-    $template.find('.price').text('₹' + itemPrice);
+    $template.find('.price').text('₹ ' + itemPrice);
     $template.css('background-image', 'url(' + itemImg + ')');
+    $template.css('background-size', 'contain');
+    $template.css('background-repeat', 'no-repeat');
+    $template.css('font-family', 'poppins');
     
     $template.data('id', itemId);
     $template.data('name', itemName);
     $template.data('price', itemPrice);
     $template.data('image', itemImg);
+    
     
     $shop.append($template);
   }
@@ -122,7 +126,7 @@ $(document).ready(function() {
     var subtotal = 0,
         items = $cart.children(),
         // shipping not applied if there are no items
-        shipping = items.length > 0 ? 5 : 0,
+        shipping = items.length > 0 ? 50 : 0,
         tax = 0;
     items.each(function(index, item) {
       var $item = $(item),
@@ -130,7 +134,7 @@ $(document).ready(function() {
       subtotal += price;
     });
     $('.subtotalTotal span').text(('₹'+subtotal));
-    tax = subtotal * .05;
+    tax = Math.round(subtotal * .05);
     $('.taxes span').text(('₹'+tax));
     $('.shipping span').text(('₹'+shipping));
     $('.finalTotal span').text(('₹'+(subtotal + tax + shipping)));

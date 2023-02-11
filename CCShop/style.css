@@ -3,6 +3,7 @@ body {
   font-weight: 300;
   font-size: 1em;
   color: #cccccc;
+  font-family: 'poppins';
 }
 
 header {
@@ -190,7 +191,7 @@ footer p {
   z-index: 1;
   top: 2px;
   display: block;
-  width: 50px;
+  width: 70px;
   height: 46px;
   border-right: 1px solid #f5e7cb;
   border-radius: 2px 0 0 2px;
@@ -212,20 +213,20 @@ footer p {
 .product .button .addtocart > div {
   position: absolute;
   display: block;
-  width: 150px;
+  width: 200px;
   height: 50px;
   border-radius: 0 2px 2px 0;
   line-height: 50px;
 }
 .product .button .addtocart > .add {
   background: #fff;
-  color: #efd8ab;
+  color: #584620;
   transform: rotateY(0deg) translateZ(25px);
   transition: background 150ms ease-out;
 }
 .product .button .addtocart > .add:hover {
-  background: #efd8ab;
-  color: #fff;
+  background: #e6c788;
+  color: rgb(28, 23, 23);
 }
 .product .button .addtocart > .added {
   background: #f63;
@@ -313,6 +314,7 @@ footer p {
 /* Styling for Total Costs */
 .total {
   margin-top: 50px;
+  font-family: "poppins";
 }
 
 .total > * {
@@ -368,9 +370,9 @@ a.checkout:hover {
 }
 @media (max-width: 420px) {
   /* Hide text in the cart link to save room */
-  .cart-text > span {
+  /* .cart-text > span {
     display: none;
-  }
+  } */
 }
 /* Keyframe Animations
  * ============================ */
