@@ -134,7 +134,7 @@ $(document).ready(function() {
       subtotal += price;
     });
     $('.subtotalTotal span').text(('₹'+subtotal));
-    tax = Math.round(subtotal * .05);
+    tax = Math.round(subtotal * .12);
     $('.taxes span').text(('₹'+tax));
     $('.shipping span').text(('₹'+shipping));
     $('.finalTotal span').text(('₹'+(subtotal + tax + shipping)));
